@@ -17,11 +17,9 @@ $(ODIR)/%.o: src/%.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 build_dirs:
-	echo "1"
 	mkdir -p obj/
 
 v4c-video-slider: $(OBJ)
-	echo "2"
 	$(CC) -o v4c-video-slider $< $(CFLAGS) $(LIBS)
 
 default: build_dirs v4c-video-slider
