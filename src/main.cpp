@@ -31,8 +31,11 @@ int main() {
     return 1;
   }
 
-  gdImageFilledRectangle(im, 19, 29, 390, 390, 0xFFFFFF);
-  gdImageRectangle(im, 19, 29, 390, 390, 0xFF0000);
+  int brect[8];
+  char buf[60];
+  int fc = gdImageColorAllocate(im, 255, 255, 255);
+  gdImageStringFT(im, brect, 0 - fc, "fonts/HelveticaNeue-CondensedBold.ttf", 50, 0.0, 250, 250, "THIS IS V4C");
+
   gdImageCropAuto(im, GD_CROP_SIDES);
 
   if (im) {
