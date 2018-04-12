@@ -23,8 +23,9 @@ void save_png(gdImagePtr im, const char *filename)
 void add_centered_text(gdImagePtr im, int x1, int y1, int x2, int y2, const char *text)
 {
   double size = 50.;
-  int brect[8];
+
   // For sizing
+  int brect[8];
   gdImageStringFT(NULL, &brect[0], 0, (char *)"fonts/HelveticaNeue-CondensedBold.ttf", size, 0., 0, 0, (char *)text);
 
   int white = gdImageColorAllocate(im, 255, 255, 255);
@@ -47,7 +48,7 @@ int main() {
   int black = gdImageColorAllocate(im, 0, 0, 0);
   gdImageFilledRectangle(im, 0, 0, 1920, 1080, black);
 
-  add_centered_text(im, 0, 0, 1920, 1080, "THIS IS V4C");
+  add_centered_text(im, 0, 0, 1920, 1080, "[ THIS IS V4C ]");
 
   gdImageCropAuto(im, GD_CROP_SIDES);
 
