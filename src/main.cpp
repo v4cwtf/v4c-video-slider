@@ -34,10 +34,8 @@ int main() {
   int black = gdImageColorAllocate(im, 0, 0, 0);
   gdImageFilledRectangle(im, 0, 0, 1920, 1080, black);
 
-  int brect[8];
-  char buf[60];
-  int fc = gdImageColorAllocate(im, 255, 255, 255);
-  gdImageStringFT(im, brect, 0 - fc, (char *)"fonts/HelveticaNeue-CondensedBold.ttf", 50, 0.0, 250, 250,
+  int white = gdImageColorAllocate(im, 255, 255, 255);
+  gdImageStringFT(im, NULL, white, (char *)"fonts/HelveticaNeue-CondensedBold.ttf", 50, 0.0, 250, 250,
       (char *)"THIS IS V4C");
   gdImageCropAuto(im, GD_CROP_SIDES);
 
